@@ -1,0 +1,13 @@
+<div class="form-group">
+  <input type="text" ng-model="search.name" placeholder="search here" />
+  <button><i class="fas fa-search"></i></button>
+</div>
+<div infinite-scroll="loadMore()" infinite-scroll-distance="2">
+  <div class="posts">
+    <div class="post" ng-repeat="user in users | filter:search.name">
+      <h1>{{ user.name }}</h1>
+      <p>{{ user.email }}</p>
+      <p>{{ user.address }}</p>
+    </div>
+  </div>
+</div>
